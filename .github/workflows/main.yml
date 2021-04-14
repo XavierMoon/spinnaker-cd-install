@@ -32,38 +32,20 @@ jobs:
 #     ## 
     - name: 01-使用Halyard获取bom版本文件
       run: |
-        
-		docker login --username={{ secrets.DOCKER_USER}} -p {{ secrets.DOCKER_PASSWD}} registry.cn-beijing.aliyuncs.com
+        docker login --username=${{ secrets.DOCKER_USER}} -p ${{ secrets.DOCKER_PASSWD}} registry.cn-beijing.aliyuncs.com
 		docker pull us-docker.pkg.dev/spinnaker-community/docker/clouddriver:7.3.3-20210322155326
 		docker tag us-docker.pkg.dev/spinnaker-community/docker/clouddriver:7.3.3-20210322155326 registry.cn-beijing.aliyuncs.com/jyh_docker/clouddriver:7.3.3-20210322155326 
-
 		docker push registry.cn-beijing.aliyuncs.com/jyh_docker/clouddriver:7.3.3-20210322155326 
-
-
-
-		docker pull us-docker.pkg.dev/spinnaker-community/docker/deck:3.6.1-20210329201325
+        docker pull us-docker.pkg.dev/spinnaker-community/docker/deck:3.6.1-20210329201325
 		docker tag us-docker.pkg.dev/spinnaker-community/docker/deck:3.6.1-20210329201325 registry.cn-beijing.aliyuncs.com/jyh_docker/deck:3.6.1-20210329201325 
-
 		docker push registry.cn-beijing.aliyuncs.com/jyh_docker/deck:3.6.1-20210329201325 
-
-
-
-
 		docker pull us-docker.pkg.dev/spinnaker-community/docker/echo:2.16.0-20210208200018
 		docker tag us-docker.pkg.dev/spinnaker-community/docker/echo:2.16.0-20210208200018 registry.cn-beijing.aliyuncs.com/jyh_docker/echo:2.16.0-20210208200018 
-
 		docker push registry.cn-beijing.aliyuncs.com/jyh_docker/echo:2.16.0-20210208200018 
-
-
-
-
 		docker pull us-docker.pkg.dev/spinnaker-community/docker/front50:0.26.2-20210216140019
 		docker tag us-docker.pkg.dev/spinnaker-community/docker/front50:0.26.2-20210216140019 registry.cn-beijing.aliyuncs.com/jyh_docker/front50:0.26.2-20210216140019 
 
 		docker push registry.cn-beijing.aliyuncs.com/jyh_docker/front50:0.26.2-20210216140019 
-
-
-
 		docker pull us-docker.pkg.dev/spinnaker-community/docker/gate:1.21.0-20210215200018
 		docker tag us-docker.pkg.dev/spinnaker-community/docker/gate:1.21.0-20210215200018 registry.cn-beijing.aliyuncs.com/jyh_docker/gate:1.21.0-20210215200018
 
